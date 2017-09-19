@@ -4,21 +4,13 @@
 // HINT: recursion may help here
 
 function hasFalsyValue(obj) {
-  var falsy = [false, null, undefined, 0, NaN, '',""];
+  if (!obj)return true;
+  if (typeof obj === 'string' && obj) return false;
   for(var i in obj){
-    console.log(i+' '+falsy.includes(obj[i])+' '+typeof(i));
-    if(typeof(i) === 'object'){
-      hasFalsyValue(i);
-    }
-    else 
-    {
-      if(falsy.includes(obj[i])){
-        return true;
-      }
-    }
+    if(hasFalsyValue(obj[i])) return true;
   }
   return false;
 }
 
-var ob = {'a':1, 'b':2, ss: {'t':false}};
+var ob = {'a':1, 'b':2, ss: {'t':45}};
 console.log(hasFalsyValue(ob));

@@ -11,7 +11,11 @@ function hasFalsyValue(obj) {
     return false;
 }
 
+obg = {a:'s',b:'ismet'};
+console.log(hasFalsyValue(obg));
 
+
+/*
 // tests
 console.assert(hasFalsyValue({sadf: false}));
 console.assert(hasFalsyValue({
@@ -36,4 +40,4 @@ console.assert(hasFalsyValue({
     b: {
         a: [1,2,3,0]
     }
-}));
+}));*/

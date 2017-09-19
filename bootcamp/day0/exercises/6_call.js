@@ -5,9 +5,17 @@
 var notArr;
 
 function populateNotArr() {
-    notArr = arguments;
+  var arr = [];
+  for (var i in arguments){
+    arr.push(arguments[i]);
+  }
+
+  var z = function(a,b){return a+b;};
+  notArr = arr;
+//  console.log(notArr);
+  return  Array.prototype.reduce.call(arr, z, '');  
 }
 
-populateNotArr('Hello', ',', ' ', 'world', '!')
+populateNotArr('Hello', ',', ' ', 'world', '!');
 
-console.log(notArr);
+//console.log(notArr);
