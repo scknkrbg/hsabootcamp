@@ -5,3 +5,23 @@
 // Write a function below that takes two arguments and console.logs their concatenation.
 // Then use bind() and the function that you wrote to create a greeting function
 // that takes a name as input and greets the name
+
+
+function conc (a,b) {
+ return console.log(a+b);
+}
+
+function conc1 (a,b) {
+ console.log(a+b);
+}
+
+var a = conc;
+var b = conc1
+
+var c = a(1,2);
+var d = b(1,2);
+console.log(typeof a, typeof b, typeof c, typeof d);
+
+var greet = conc.bind(null,'Hello!, ');
+//console.log(conc('seçkin ','karabag'));
+greet('Seckin');

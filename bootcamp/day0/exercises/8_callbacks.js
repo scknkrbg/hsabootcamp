@@ -16,3 +16,15 @@ function getUser(callback) {
     };
     callback(user);
 }
+
+function ret(x){
+  console.log(x);
+};
+
+function s(user){
+  
+}
+
+
+var simToss = getUser(coinToss(true,ret));
+simToss();
