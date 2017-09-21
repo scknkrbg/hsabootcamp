@@ -4,7 +4,7 @@
 
 function coinToss(guess, callback) {
     var result = Math.round(Math.random());
-    var didWin = (guess === result);
+    var didWin = (guess === result); 
     callback(didWin);
 }
 
@@ -13,7 +13,7 @@ function getUser(callback) {
         firstName: 'John',
         lastName: 'Doe',
         guess: Math.round(Math.random())
-    };
+    }; 
     callback(user);
 }
 
@@ -21,10 +21,23 @@ function ret(x){
   console.log(x);
 };
 
-function s(user){
-  
-}
+function o(obj){
+  return obj.guess; 
+};
+
+getUser(function(user){
+  coinToss(user.guess, function(didWin){
+    console.log('user:', user.guess);
+    if(didWin){
+      console.log('Congrats! You won!');
+    } else {
+      console.log('You lost!');
+    }
+  });
+});
 
 
-var simToss = getUser(coinToss(true,ret));
-simToss();
+
+//var simToss = coinToss(getUser(o),ret);
+//simToss;
+
